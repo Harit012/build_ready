@@ -19,6 +19,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // void _onClickInkWell(context) {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => const PropertiesScreen(
+  //         url: UrlsForExample.url,
+  //       ),
+  //     ),
+  //   );
+  // }  
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -66,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         IconButton(
                           onPressed: _addNewProject,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.add_circle_rounded,
                             size: 40,
                           ),

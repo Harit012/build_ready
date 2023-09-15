@@ -1,3 +1,4 @@
+import 'package:build_ready/widgets/add_new_project.dart';
 import 'package:build_ready/widgets/projectwidget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
       useSafeArea: true,
       isScrollControlled: true,
       context: context,
-      builder: (ctx) => const ProjectWidget(),
+      builder: (ctx) => const AddNewProject(),
     );
   }
 
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color(0xFFA28B85),
           title: Row(
             children: [
               const Text('Hello , @buildername'),
@@ -63,9 +65,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.add,
+                        onPressed: _addNewProject,
+                        icon: Icon(
+                          Icons.add_circle_rounded,
                           size: 40,
                         ),
                       ),

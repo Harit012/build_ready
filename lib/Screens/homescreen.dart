@@ -41,49 +41,50 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           ),
-          titleSpacing: 20,
         ),
-        body: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                const SizedBox(
-                  width: 20,
-                ),
-                const Text(
-                  'Your Projects',
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'OpenSanas'),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        onPressed: _addNewProject,
-                        icon: Icon(
-                          Icons.add_circle_rounded,
-                          size: 40,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                    ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 20,
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const ProjectWidget(),
-          ],
+                  const Text(
+                    'Your Projects',
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'OpenSanas'),
+                  ),
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        IconButton(
+                          onPressed: _addNewProject,
+                          icon: Icon(
+                            Icons.add_circle_rounded,
+                            size: 40,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const ProjectWidget(),
+            ],
+          ),
         ),
       ),
     );

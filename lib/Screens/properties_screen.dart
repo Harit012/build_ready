@@ -1,4 +1,5 @@
 // import 'package:build_ready/data/dummy_url.dart';
+import 'package:build_ready/Screens/features_screen.dart';
 import 'package:build_ready/widgets/properties.dart';
 import 'package:flutter/material.dart';
 
@@ -28,23 +29,38 @@ class PropertiesScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: const Column(
+        body: Column(
           children: [
-             SizedBox(
+            const SizedBox(
               height: 10,
             ),
-             PropertiesWidget(
-                url: 'images/FlatBooking.jpg', name: 'Flat Booking'),
-             SizedBox(
+            InkWell(
+              onTap: () {},
+              child: const PropertiesWidget(
+                  url: 'images/FlatBooking.jpg', name: 'Flat Booking'),
+            ),
+            const SizedBox(
               height: 10,
             ),
-             PropertiesWidget(
-                url: 'images/PaymentDetails.jpg', name: 'Payment Details'),
-             SizedBox(
+            InkWell(
+              onTap: () {},
+              child: const PropertiesWidget(
+                  url: 'images/PaymentDetails.jpg', name: 'Payment Details'),
+            ),
+            const SizedBox(
               height: 10,
             ),
-             PropertiesWidget(
-                url: 'images/PhotoGallery.jpg', name: 'Photo Gallery'),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FeaturesScreen()),
+                );
+              },
+              child: const PropertiesWidget(
+                  url: 'images/PhotoGallery.jpg', name: 'Photo Gallery'),
+            ),
             // Expanded(
             //   child: Column(
             //     mainAxisAlignment: MainAxisAlignment.end,

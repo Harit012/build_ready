@@ -30,7 +30,7 @@ class PropertiesWidget extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      name,
+                      "  $name",
                       style: const TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 25,

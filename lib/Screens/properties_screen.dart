@@ -1,5 +1,6 @@
 // import 'package:build_ready/data/dummy_url.dart';
-import 'package:build_ready/Screens/features_screen.dart';
+import 'package:build_ready/Screens/flat_booking_screen.dart';
+import 'package:build_ready/Screens/gallery_features_screen.dart';
 import 'package:build_ready/widgets/properties.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,14 @@ class PropertiesScreen extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const FlatBookingScreen(),
+                  ),
+                );
+              },
               child: const PropertiesWidget(
                   url: 'images/FlatBooking.jpg', name: 'Flat Booking'),
             ),
@@ -55,7 +63,7 @@ class PropertiesScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const FeaturesScreen()),
+                      builder: (context) => const GalleryFeaturesScreen()),
                 );
               },
               child: const PropertiesWidget(

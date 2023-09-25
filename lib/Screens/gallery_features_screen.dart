@@ -2,8 +2,8 @@ import 'package:build_ready/data/dummy_url.dart';
 import 'package:build_ready/widgets/features.dart';
 import 'package:flutter/material.dart';
 
-class FeaturesScreen extends StatelessWidget {
-  const FeaturesScreen({super.key});
+class GalleryFeaturesScreen extends StatelessWidget {
+  const GalleryFeaturesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

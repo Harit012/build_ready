@@ -1,8 +1,6 @@
 import 'package:build_ready/Screens/home_screen.dart';
-import 'package:build_ready/data/dummy_url.dart';
 import 'package:flutter/material.dart';
-// import 'package:velocity_x/velocity_x.dart';
-// import 'package:velocity_x/velocity_x.dart';
+
 
 class Wing extends StatelessWidget {
   const Wing({super.key});

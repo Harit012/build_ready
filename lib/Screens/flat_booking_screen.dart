@@ -77,7 +77,7 @@ class FlatBookingScreen extends StatelessWidget {
                 right: 20,
                 bottom: 50,
                 child: SingleChildScrollView(
-                  child: Container(
+                  child: SizedBox(
                     height: 1000,
                     width: 600,
                     // color: Colors.black12,

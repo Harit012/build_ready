@@ -1,4 +1,4 @@
-import 'package:build_ready/Screens/flat_booking_screen.dart';
+import 'package:build_ready/Screens/inside_wing_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ void main() {
       // theme: ,
       // darkTheme: ,
       debugShowCheckedModeBanner: false,
-      home: FlatBookingScreen(),
+      home: InsideWingScreen(noOfFloors: 5),
     ),
   );
 }

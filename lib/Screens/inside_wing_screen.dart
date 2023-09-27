@@ -11,7 +11,7 @@ class InsideWingScreen extends StatefulWidget {
 
 class _InsideWingScreenState extends State<InsideWingScreen> {
   final int noOfFloors;
-  final int noOdBlocksPerFloor = 2;
+  final int noOdBlocksPerFloor = 8;
 
   _InsideWingScreenState(this.noOfFloors);
   @override
@@ -76,12 +76,19 @@ class _InsideWingScreenState extends State<InsideWingScreen> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            for (int k = 1; k <= noOdBlocksPerFloor; k++)
-                              const BlockWidget(),
-                          ],
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                for (int k = 1; k <= noOdBlocksPerFloor; k++)
+                                  const BlockWidget(
+                                    isBooked: false,
+                                  ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -89,8 +96,6 @@ class _InsideWingScreenState extends State<InsideWingScreen> {
                       ),
                     ],
                   )
-
-                // for(int j = 1)
               ],
             ),
           )),

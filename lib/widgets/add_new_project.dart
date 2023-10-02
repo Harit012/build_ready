@@ -152,7 +152,7 @@ class _AddNewProjectState extends State<AddNewProject> {
                           ),
                           child: const Center(
                             child: Text(
-                              'Login',
+                              'Add',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,

@@ -1,9 +1,11 @@
+import 'package:build_ready/widgets/booking_form.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class BlockWidget extends StatelessWidget {
   const BlockWidget({super.key, required this.isBooked});
   final bool isBooked;
+  // final void Function() bookingForm;
 
   Color _getColor(isBooked) {
     if (isBooked) {
@@ -13,6 +15,15 @@ class BlockWidget extends StatelessWidget {
     }
   }
 
+  void _bookingForm(context) {
+    showModalBottomSheet(
+      useSafeArea: true,
+      isScrollControlled: true,
+      context: context,
+      builder: (ctx) => const BookingForm(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,7 +31,13 @@ class BlockWidget extends StatelessWidget {
       child: Column(
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+              if (isBooked) {
+                _bookingForm(context);
+              } else {
+                _bookingForm(context); // this is not Permenant
+              }
+            },
             child: Container(
               height: 120,
               width: 120,

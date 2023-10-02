@@ -77,7 +77,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         children: [
                           const Text('Forget Password ? '),
                           TextButton(
-                              onPressed: () {}, child: const Text('Click here'))
+                            onPressed: () {},
+                            child: const Text('Click here'),
+                          )
                         ],
                       ),
                     ],

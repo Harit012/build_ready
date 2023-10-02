@@ -1,40 +1,32 @@
 // import 'package:build_ready/widgets/block_widget.dart';
 import 'package:build_ready/widgets/block_widget.dart';
+import 'package:build_ready/widgets/builders_navigator.dart';
 import 'package:flutter/material.dart';
 
 class InsideWingScreen extends StatefulWidget {
-  const InsideWingScreen({super.key, required this.noOfFloors});
-  final int noOfFloors;
+  const InsideWingScreen({
+    super.key,
+  });
+
   @override
-  State<InsideWingScreen> createState() => _InsideWingScreenState(noOfFloors);
+  // ignore: no_logic_in_create_state
+  State<InsideWingScreen> createState() => _InsideWingScreenState();
 }
 
 class _InsideWingScreenState extends State<InsideWingScreen> {
-  final int noOfFloors;
-  final int noOdBlocksPerFloor = 8;
+  final int noOfFloors = 4;
+  final int noOfBlocksPerFloor = 4;
 
-  _InsideWingScreenState(this.noOfFloors);
+  _InsideWingScreenState();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: const Color(0xFFA28B85),
-            title: Row(
-              children: [
-                const Text('Wing A'),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.verified_user_outlined),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+            title: const BuildersNavigator(
+              title: 'Wing a',
             ),
           ),
           body: SingleChildScrollView(
@@ -82,9 +74,9 @@ class _InsideWingScreenState extends State<InsideWingScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                for (int k = 1; k <= noOdBlocksPerFloor; k++)
+                                for (int k = 1; k <= noOfBlocksPerFloor; k++)
                                   const BlockWidget(
-                                    isBooked: false,
+                                    isBooked: true,
                                   ),
                               ],
                             ),

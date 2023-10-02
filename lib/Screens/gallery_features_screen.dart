@@ -1,4 +1,5 @@
 import 'package:build_ready/data/dummy_url.dart';
+import 'package:build_ready/widgets/builders_navigator.dart';
 import 'package:build_ready/widgets/features.dart';
 import 'package:flutter/material.dart';
 
@@ -10,21 +11,8 @@ class GalleryFeaturesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFA28B85),
-        title: Row(
-          children: [
-            const Text('Features'),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.verified_user_outlined),
-                  ),
-                ],
-              ),
-            )
-          ],
+        title: const BuildersNavigator(
+          title: 'Gallery Features',
         ),
       ),
       body: const Padding(

@@ -1,3 +1,4 @@
+import 'package:build_ready/Screens/builder_profile_screen.dart';
 import 'package:build_ready/widgets/add_new_project.dart';
 import 'package:build_ready/widgets/projectwidget.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //       ),
   //     ),
   //   );
-  // }  
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +44,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(
-                      onPressed: _addNewProject,
-                      icon: const Icon(Icons.verified_user_outlined),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const BuilderProfileScreen(),
+                          ),
+                        );
+                      },
+                      child: const CircleAvatar(
+                        radius: 18,
+                        backgroundColor: Color.fromARGB(255, 15, 16, 14),
+                        child: Text(
+                          'HP',
+                          style: TextStyle(color: Colors.white, fontSize: 12),
+                        ),
+                      ),
                     ),
                   ],
                 ),

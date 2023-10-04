@@ -1,3 +1,4 @@
+import 'package:build_ready/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -96,7 +97,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 //         borderRadius: BorderRadius.circular(20)),
                 //     onPressed: () {})
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()));
+                  },
                   child: Container(
                       width: 154,
                       height: 44,

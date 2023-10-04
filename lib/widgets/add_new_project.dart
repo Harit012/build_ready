@@ -96,7 +96,7 @@ class _AddNewProjectState extends State<AddNewProject> {
                             ),
                           ),
                           const SizedBox(
-                            width: 60,
+                            width: 30,
                           ),
                           SizedBox(
                             width: 80,
@@ -110,7 +110,7 @@ class _AddNewProjectState extends State<AddNewProject> {
                             ),
                           ),
                           const SizedBox(
-                            width: 60,
+                            width: 30,
                           ),
                           SizedBox(
                             width: 80,
@@ -126,7 +126,7 @@ class _AddNewProjectState extends State<AddNewProject> {
                         ],
                       ),
                       const SizedBox(
-                        height: 30,
+                        height: 20,
                       ),
                       TextField(
                         controller: _imageUrlController,
@@ -137,7 +137,7 @@ class _AddNewProjectState extends State<AddNewProject> {
                         ),
                       ),
                       const SizedBox(
-                        height: 30,
+                        height: 20,
                       ),
                       TextButton(
                         onPressed: () {},

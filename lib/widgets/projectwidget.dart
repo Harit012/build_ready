@@ -25,7 +25,7 @@ class ProjectWidget extends StatelessWidget {
               'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
             ),
             fit: BoxFit.cover,
-            opacity: 0.2,
+            opacity: 0.7,
           ),
           color: Colors.black,
           shape: BoxShape.rectangle,

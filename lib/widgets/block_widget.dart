@@ -1,3 +1,4 @@
+import 'package:build_ready/Screens/customers_screen.dart';
 import 'package:build_ready/widgets/booking_form.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,9 @@ class BlockWidget extends StatelessWidget {
 
   Color _getColor(isBooked) {
     if (isBooked) {
-      return const Color.fromARGB(113, 117, 235, 80);
-    } else {
       return const Color.fromARGB(245, 234, 95, 56);
+    } else {
+      return const Color.fromARGB(113, 117, 235, 80);
     }
   }
 
@@ -33,7 +34,12 @@ class BlockWidget extends StatelessWidget {
           InkWell(
             onTap: () {
               if (isBooked) {
-                _bookingForm(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CustomersScreen(),
+                  ),
+                );
               } else {
                 _bookingForm(context); // this is not Permenant
               }

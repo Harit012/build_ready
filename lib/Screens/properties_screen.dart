@@ -1,6 +1,8 @@
 // import 'package:build_ready/data/dummy_url.dart';
 import 'package:build_ready/Screens/flat_booking_screen.dart';
 import 'package:build_ready/Screens/gallery_features_screen.dart';
+import 'package:build_ready/Screens/payment_info_screen.dart';
+import 'package:build_ready/widgets/builders_navigator.dart';
 import 'package:build_ready/widgets/properties.dart';
 import 'package:flutter/material.dart';
 
@@ -13,22 +15,7 @@ class PropertiesScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xFFA28B85),
-          title: Row(
-            children: [
-              const Text('Properties'),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.verified_user_outlined),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+          title: const BuildersNavigator(title: 'Properties'),
         ),
         body: Column(
           children: [
@@ -51,7 +38,14 @@ class PropertiesScreen extends StatelessWidget {
               height: 10,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaymentInfoScreen(),
+                  ),
+                );
+              },
               child: const PropertiesWidget(
                   url: 'images/PaymentDetails.jpg', name: 'Payment Details'),
             ),

@@ -98,7 +98,7 @@ class _BookingFormState extends State<BookingForm> {
                     Row(
                       children: [
                         SizedBox(
-                          width: 150,
+                          width: 130,
                           child: TextField(
                             controller: _buyerPaymentController,
                             maxLength: 20,
@@ -114,7 +114,7 @@ class _BookingFormState extends State<BookingForm> {
                           width: 50,
                         ),
                         SizedBox(
-                          width: 150,
+                          width: 130,
                           child: TextField(
                             controller: _totalPaymentController,
                             maxLength: 20,
@@ -136,7 +136,7 @@ class _BookingFormState extends State<BookingForm> {
                         TextButton(
                           onPressed: () {},
                           child: Container(
-                            width: 154,
+                            width: 134,
                             height: 44,
                             decoration: ShapeDecoration(
                               color: const Color(0xFFA28B85),
@@ -166,7 +166,7 @@ class _BookingFormState extends State<BookingForm> {
                             Navigator.pop(context);
                           },
                           child: Container(
-                            width: 154,
+                            width: 134,
                             height: 44,
                             decoration: ShapeDecoration(
                               color: const Color(0xFFA28B85),

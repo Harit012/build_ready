@@ -1,4 +1,4 @@
-import 'package:build_ready/Screens/home_screen.dart';
+import 'package:build_ready/Screens/inside_wing_screen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -14,7 +14,7 @@ class Wing extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => const InsideWingScreen(),
             ),
           );
         },

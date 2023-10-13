@@ -20,7 +20,7 @@ class BuildersNavigator extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>  BuilderProfileScreen()),
+                        builder: (context) => const BuilderProfileScreen()),
                   );
                 },
                 child: const CircleAvatar(

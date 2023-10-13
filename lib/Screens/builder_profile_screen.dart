@@ -1,10 +1,9 @@
-import 'package:build_ready/Screens/authentication_screen.dart';
 import 'package:build_ready/widgets/details_row.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class BuilderProfileScreen extends StatelessWidget {
-  BuilderProfileScreen({super.key});
+  const BuilderProfileScreen({super.key});
   final builderName = "Kachra Seth";
   final builderID = "AHN512";
   final builderEmail = "builder@gmail.com";
@@ -12,11 +11,11 @@ class BuilderProfileScreen extends StatelessWidget {
   final companyName = "xyz";
   final companySite = "www.company.in";
   final companyLocation = "Rajkot,Gujarat";
-  final user = FirebaseAuth.instance.currentUser;
+  // final user = FirebaseAuth.instance.currentUser!;
 
-  void logUserOut() async {
-    await FirebaseAuth.instance.signOut();
-    // const AuthenticationScreen();
+  void logUserOut(context) {
+    FirebaseAuth.instance.signOut();
+    Navigator.pop(context);
   }
 
   @override
@@ -133,7 +132,10 @@ class BuilderProfileScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextButton(
-                        onPressed: logUserOut,
+                        onPressed: () {
+                          FirebaseAuth.instance.signOut();
+                          Navigator.pop(context);
+                        },
                         child: Container(
                           width: 154,
                           height: 44,

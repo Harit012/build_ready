@@ -17,9 +17,28 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isVisible = true;
 
   void logUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: uname.text,
-      password: pwd.text,
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: uname.text,
+        password: pwd.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        warningMessage('Uase');
+      } else if (e.code == 'wrong-password') {
+        warningMessage('Password ');
+      }
+    }
+  }
+
+  Future warningMessage(String cause) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Incorrect $cause'),
+        );
+      },
     );
   }
 

@@ -11,12 +11,7 @@ class BuilderProfileScreen extends StatelessWidget {
   final companyName = "xyz";
   final companySite = "www.company.in";
   final companyLocation = "Rajkot,Gujarat";
-  // final user = FirebaseAuth.instance.currentUser!;
 
-  void logUserOut(context) {
-    FirebaseAuth.instance.signOut();
-    Navigator.pop(context);
-  }
 
   @override
   Widget build(BuildContext context) {

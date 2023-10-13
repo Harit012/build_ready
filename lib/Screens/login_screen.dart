@@ -1,6 +1,7 @@
-import 'package:build_ready/Screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -9,11 +10,18 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController uname = TextEditingController();
+  final TextEditingController uname = TextEditingController();
 
-  TextEditingController pwd = TextEditingController();
+  final TextEditingController pwd = TextEditingController();
 
   bool isVisible = true;
+
+  void logUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: uname.text,
+      password: pwd.text,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,23 +94,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-
                 const SizedBox(
                   height: 50,
                 ),
-                // FloatingActionButton(
-                //     child: const Text('Login'),
-                //     elevation: 50,
-                //     shape: RoundedRectangleBorder(
-                //         borderRadius: BorderRadius.circular(20)),
-                //     onPressed: () {})
                 TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()));
-                  },
+                  onPressed: logUserIn,
                   child: Container(
                       width: 154,
                       height: 44,

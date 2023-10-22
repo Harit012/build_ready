@@ -1,7 +1,9 @@
 import 'package:build_ready/Screens/builder_profile_screen.dart';
 import 'package:build_ready/widgets/add_new_project.dart';
 import 'package:build_ready/widgets/projectwidget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  final String user = FirebaseAuth.instance.currentUser!.email!;
   // void _onClickInkWell(context) {
   //   Navigator.push(
   //     context,
@@ -39,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: const Color(0xFFA28B85),
           title: Row(
             children: [
-              const Text('Hello , @buildername'),
+              Text('Hello , $user'),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -49,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>const BuilderProfileScreen(),
+                            builder: (context) => const BuilderProfileScreen(),
                           ),
                         );
                       },
@@ -108,7 +111,29 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 30,
               ),
-              const ProjectWidget(),
+              StreamBuilder(
+                stream:
+                    FirebaseFirestore.instance.collection('/User/$user/Projects').snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
+                      // shrinkWrap: true,
+                      // physics: const NeverScrollableScrollPhysics(),
+                      itemCount: snapshot.data!.docs.length,
+                      itemBuilder: (context, index) {
+                        // final project = snapshot.data!.docs[index];
+                        return const ProjectWidget();
+                      },
+                    );
+                  } else {
+                    return const Center(
+                      child: Text("no data"),
+                    );
+                  }
+                },
+              )
+              
+              // const ProjectWidget(),
             ],
           ),
         ),

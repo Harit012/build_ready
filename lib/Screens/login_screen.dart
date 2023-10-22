@@ -22,9 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
         password: pwd.text,
       );
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
+      if (e.code == 'invalid-email') {
         warningMessage('Uase');
-      } else if (e.code == 'wrong-password') {
+      } else if (e.code == 'INVALID_LOGIN_CREDENTIALS') {
         warningMessage('Password ');
       }
     }

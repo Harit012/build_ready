@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/rendering.dart';
 
@@ -17,6 +19,14 @@ class _AddNewProjectState extends State<AddNewProject> {
   final _imageUrlController = TextEditingController();
 
   late String flatType;
+  final String user = FirebaseAuth.instance.currentUser!.email!;
+
+  Future addUserDetails(String projectName, String projectId) async {
+    await FirebaseFirestore.instance.collection('User/$user').add({
+      "project_name": projectName,
+      "project_id": projectId,
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +150,12 @@ class _AddNewProjectState extends State<AddNewProject> {
                         height: 20,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          addUserDetails(
+                            _projectNameController.text.trim(),
+                            _projectIdController.text.trim(),
+                          );
+                        },
                         child: Container(
                           width: 154,
                           height: 44,

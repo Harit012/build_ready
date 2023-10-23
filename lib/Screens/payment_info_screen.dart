@@ -49,7 +49,7 @@ class PaymentInfoScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFA28B85),
-        title: const BuildersNavigator(
+        title:  BuildersNavigator(
           title: 'Payment Information',
         ),
       ),

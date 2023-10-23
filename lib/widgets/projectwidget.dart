@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:build_ready/Screens/properties_screen.dart';
-// import 'package:build_ready/data/dummy_url.dart';
 
 class ProjectWidget extends StatelessWidget {
-  const ProjectWidget({Key? key}) : super(key: key);
+  const ProjectWidget({Key? key,required this.projectName}) : super(key: key);
+  final String projectName ;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +32,13 @@ class ProjectWidget extends StatelessWidget {
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(20),
         ),
-        child: const Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Center(
               child: Text(
-                "Project name",
-                style: TextStyle(
+                projectName,
+                style:const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -45,7 +46,7 @@ class ProjectWidget extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
           ],
         ),
       ),

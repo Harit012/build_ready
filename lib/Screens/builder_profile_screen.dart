@@ -1,6 +1,7 @@
 import 'package:build_ready/widgets/details_row.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class BuilderProfileScreen extends StatelessWidget {
   const BuilderProfileScreen({super.key});
@@ -15,6 +16,7 @@ class BuilderProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String $userSymbol=(FirebaseAuth.instance.currentUser!.email!)[0].capitalized;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFA28B85),
@@ -51,12 +53,12 @@ class BuilderProfileScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 30,
-                    backgroundColor: Color.fromARGB(255, 93, 152, 20),
+                    backgroundColor:const Color.fromARGB(255, 93, 152, 20),
                     child: Text(
-                      'KS',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      $userSymbol,
+                      style:const TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
                   const SizedBox(

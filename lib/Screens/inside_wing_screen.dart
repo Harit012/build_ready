@@ -25,7 +25,7 @@ class _InsideWingScreenState extends State<InsideWingScreen> {
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: const Color(0xFFA28B85),
-            title: const BuildersNavigator(
+            title:  BuildersNavigator(
               title: 'Wing a',
             ),
           ),

@@ -34,7 +34,7 @@ class _CustomersScreenState extends State<CustomersScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFA28B85),
-        title: const BuildersNavigator(
+        title:  BuildersNavigator(
           title: 'Customer Profile',
         ),
       ),

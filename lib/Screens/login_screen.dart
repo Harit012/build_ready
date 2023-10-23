@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'invalid-email') {
-        warningMessage('Uase');
+        warningMessage('User ');
       } else if (e.code == 'INVALID_LOGIN_CREDENTIALS') {
         warningMessage('Password ');
       }
@@ -65,8 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 100,
                 ),
-                Image.network(
-                  'https://cdn.logo.com/hotlink-ok/logo-social.png',
+                Image.asset(
+                  'images/logo.jpg',
                   height: 150,
                 ),
                 const SizedBox(

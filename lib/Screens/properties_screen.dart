@@ -15,7 +15,7 @@ class PropertiesScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xFFA28B85),
-          title: const BuildersNavigator(title: 'Properties'),
+          title:  BuildersNavigator(title: 'Properties'),
         ),
         body: Column(
           children: [

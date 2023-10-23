@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final String user = FirebaseAuth.instance.currentUser!.email!;
+
   // void _onClickInkWell(context) {
   //   Navigator.push(
   //     context,
@@ -36,13 +37,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
+    // FirebaseFirestore.instance.collection('user/$user/').snapshots();
+    // void getDetails(snapshot, index) {
+    //   final details = (snapshot.data!.docs[index]).data().values.toList();
+      
+    // }
+    
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xFFA28B85),
           title: Row(
             children: [
-              Text('Hello , $user'),
+              Text('Hello , $user[]'),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -112,17 +121,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 30,
               ),
               StreamBuilder(
-                stream:
-                    FirebaseFirestore.instance.collection('/User/$user/Projects').snapshots(),
+                stream: FirebaseFirestore.instance
+                    .collection('/user/$user/Projects')
+                    .snapshots(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return ListView.builder(
-                      // shrinkWrap: true,
-                      // physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
-                        // final project = snapshot.data!.docs[index];
-                        return const ProjectWidget();
+                        final project =
+                            (snapshot.data!.docs[index]).data().entries.toList();
+                        // print("1111111111111111111111111111111111");
+                        // print("0000000000000000000000000000000000");
+                        // print(project);
+                        // print("1111111111111111111111111111111111");
+                        // print("0000000000000000000000000000000000");
+                        return ProjectWidget(
+                            projectName: project[0].toString());
                       },
                     );
                   } else {
@@ -132,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                 },
               )
-              
+
               // const ProjectWidget(),
             ],
           ),

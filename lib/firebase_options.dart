@@ -44,38 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDQCD3ZG9jhFvp5ou_B6opwzvfpIwNOGwc',
-    appId: '1:840447785764:web:5610c0bfaf3b00a661d1b1',
-    messagingSenderId: '840447785764',
-    projectId: 'build-ready',
-    authDomain: 'build-ready.firebaseapp.com',
-    storageBucket: 'build-ready.appspot.com',
-    measurementId: 'G-FT66NHPSEN',
+    apiKey: 'AIzaSyC_B-HXrUmGZhExjRVB-8GxsskgRZeJQXo',
+    appId: '1:676175619895:web:42badd48f3cf26e6975cb2',
+    messagingSenderId: '676175619895',
+    projectId: 'buildready-dc86c',
+    authDomain: 'buildready-dc86c.firebaseapp.com',
+    storageBucket: 'buildready-dc86c.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC_gGhkQ0dXlN_osRPHIo6s1-hqpItuXe0',
-    appId: '1:840447785764:android:d8a310b1f076ebb761d1b1',
-    messagingSenderId: '840447785764',
-    projectId: 'build-ready',
-    storageBucket: 'build-ready.appspot.com',
+    apiKey: 'AIzaSyBUzyVBXoaJ_5P5_fh-PlA14fAyI4tVSII',
+    appId: '1:676175619895:android:60f107bd2be93dce975cb2',
+    messagingSenderId: '676175619895',
+    projectId: 'buildready-dc86c',
+    storageBucket: 'buildready-dc86c.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBsBCTnJmPgo27cn_HV-2-g7RBLH_jCOHg',
-    appId: '1:840447785764:ios:b7fa9da02c503c6061d1b1',
-    messagingSenderId: '840447785764',
-    projectId: 'build-ready',
-    storageBucket: 'build-ready.appspot.com',
+    apiKey: 'AIzaSyCHgyb-eacWA3w6XoxesdFoq-k2bqG83jA',
+    appId: '1:676175619895:ios:867c0ec79e906c3e975cb2',
+    messagingSenderId: '676175619895',
+    projectId: 'buildready-dc86c',
+    storageBucket: 'buildready-dc86c.appspot.com',
     iosBundleId: 'com.example.buildReady',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBsBCTnJmPgo27cn_HV-2-g7RBLH_jCOHg',
-    appId: '1:840447785764:ios:714146b164f47eb761d1b1',
-    messagingSenderId: '840447785764',
-    projectId: 'build-ready',
-    storageBucket: 'build-ready.appspot.com',
+    apiKey: 'AIzaSyCHgyb-eacWA3w6XoxesdFoq-k2bqG83jA',
+    appId: '1:676175619895:ios:445b50718ca4cf01975cb2',
+    messagingSenderId: '676175619895',
+    projectId: 'buildready-dc86c',
+    storageBucket: 'buildready-dc86c.appspot.com',
     iosBundleId: 'com.example.buildReady.RunnerTests',
   );
 }

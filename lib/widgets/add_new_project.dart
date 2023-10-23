@@ -20,11 +20,16 @@ class _AddNewProjectState extends State<AddNewProject> {
 
   late String flatType;
   final String user = FirebaseAuth.instance.currentUser!.email!;
+  // final String path = "User";
 
-  Future addUserDetails(String projectName, String projectId) async {
-    await FirebaseFirestore.instance.collection('User/$user').add({
-      "project_name": projectName,
-      "project_id": projectId,
+  Future addUserDetails() async {
+    await FirebaseFirestore.instance.collection('user/$user/Projects/').add({
+      "project_name": _projectNameController.text,
+      "project_id": _projectIdController.text,
+      "no_of_wing": _noOfWingController.text,
+      "no_of_floor": _noOFFloorController.text,
+      "no_of_block_on_floor": _noOFBlockOnFloorController.text,
+      
     });
   }
 
@@ -151,10 +156,8 @@ class _AddNewProjectState extends State<AddNewProject> {
                       ),
                       TextButton(
                         onPressed: () {
-                          addUserDetails(
-                            _projectNameController.text.trim(),
-                            _projectIdController.text.trim(),
-                          );
+                          addUserDetails();
+                          Navigator.pop(context);
                         },
                         child: Container(
                           width: 154,

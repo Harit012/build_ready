@@ -76,7 +76,7 @@ class _InsideWingScreenState extends State<InsideWingScreen> {
                               children: [
                                 for (int k = 1; k <= noOfBlocksPerFloor; k++)
                                   const BlockWidget(
-                                    isBooked: false,
+                                    isBooked: true,
                                   ),
                               ],
                             ),

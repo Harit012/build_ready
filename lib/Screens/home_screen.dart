@@ -1,3 +1,4 @@
+
 import 'package:build_ready/Screens/builder_profile_screen.dart';
 import 'package:build_ready/widgets/add_new_project.dart';
 import 'package:build_ready/widgets/projectwidget.dart';
@@ -23,27 +24,24 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final String user = FirebaseAuth.instance.currentUser!.email!;
-
-  // void _onClickInkWell(context) {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => const PropertiesScreen(
-  //         url: UrlsForExample.url,
-  //       ),
-  //     ),
-  //   );
-  // }
+  late String userName = "";
 
   @override
   Widget build(BuildContext context) {
-    
     // FirebaseFirestore.instance.collection('user/$user/').snapshots();
     // void getDetails(snapshot, index) {
     //   final details = (snapshot.data!.docs[index]).data().values.toList();
-      
+
     // }
-    
+    // int i = 0;
+    // while (i < user.length) {
+    //   if (user[i] == "@") {
+    //     break;
+    //   }
+    //   else{
+    //     userName += user[i];
+    //   }
+    // }
 
     return SafeArea(
       child: Scaffold(
@@ -51,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: const Color(0xFFA28B85),
           title: Row(
             children: [
-              Text('Hello , $user[]'),
+              Text('Hello , $user'),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -132,14 +130,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
                         final project =
-                            (snapshot.data!.docs[index]).data().entries.toList();
+                            (snapshot.data!.docs[index]).data().values.toList();
                         // print("1111111111111111111111111111111111");
                         // print("0000000000000000000000000000000000");
                         // print(project);
                         // print("1111111111111111111111111111111111");
                         // print("0000000000000000000000000000000000");
-                        return ProjectWidget(
-                            projectName: project[0].toString());
+                        return ProjectWidget(projectName: project[3]);
                       },
                     );
                   } else {
